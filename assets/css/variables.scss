@@ -1,0 +1,57 @@
+$white : #fff;
+$grey1 : #f0f0f0f0;
+$grey2 : #DFDFDF;
+$grey3 : #c0c0c0;
+$grey4 : #aaa;
+$grey5 : #777;
+$grey6 : #555;
+$grey7 : #404040;
+$grey8 : #272727;
+$grey9 : #101010;
+$black : #000;
+
+$textColor : $grey8;
+
+$lt-red : #d97c7c;
+$red : #b22c2c;
+$dk-red : #721212;
+
+$lt-green : #7cd97c;
+$green : #2cb22c;
+$dk-green : #127212;
+
+$trans-red: rgba(178, 44, 44, 0.2);
+$trans-green: rgba(44, 178, 44, 0.2);
+
+$neon-green : #59ff00;
+$neon-blue : #00aaff;
+$neon-magenta : #ff00fa;
+$neon-orange : #ffaa00;
+
+$link : $neon-blue;
+$borderRadius : 4px;
+$buttonTransitionTiming : 0.2s;
+
+$fontTiny : 0.675rem;
+$fontSmall : 0.85rem;
+$fontNormal : 1rem;
+$fontLarge : 1.2rem;
+$fontLarger : 1.5rem;
+$fontHuge : 2rem;
+
+$spaceTiny : 0.3rem;
+$spaceSmall : 0.5rem;
+$spaceNormal : 1rem;
+$spaceLarge : 1.4rem;
+$spaceLarger : 2rem;
+$spaceHuge : 3rem;
+
+
+$extraLargeScreen : 1200px;
+$largeScreenLimit : 1199px;
+$largeScreen : 1024px;
+$mediumScreenLimit : 1023px;
+$mediumScreen : 640px;
+$smallScreenLimit : 639px;
+$smallScreen : 384px;
+$extraSmallScreenLimit : 383px;

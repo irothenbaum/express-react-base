@@ -1,0 +1,14 @@
+{% extends 'layouts/default.twig' %}
+{% block title %}Game{% endblock %}
+{% block header %}
+    <!-- Header is controlled within the react app -->
+{% endblock %}
+
+{% block content %}
+    <div id="react-app"></div>
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ site.static }}/js/react/{{ appFile }}"></script>
+{%  endblock %}

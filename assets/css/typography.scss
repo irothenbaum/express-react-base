@@ -1,0 +1,110 @@
+@import "variables";
+@import "fontawesome.min.css";
+
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v12/-_Ctzj9b56b8RgXW8FArifk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Raleway Medium'), local('Raleway-Medium'), url(https://fonts.gstatic.com/s/raleway/v12/CcKI4k9un7TZVWzRVT-T8_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway Bold'), local('Raleway-Bold'), url(https://fonts.gstatic.com/s/raleway/v12/JbtMzqLaYbbbCL9X6EvaI_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face{
+  font-family:Font Awesome\ 5 Brands;
+  font-style:normal;
+  font-weight:400;
+  src:url(/static/font/fa-brands-400.eot);
+  src:url(/static/font/fa-brands-400.eot?#iefix) format("embedded-opentype"),url(/static/font/fa-brands-400.woff2) format("woff2"),url(/static/font/fa-brands-400.woff) format("woff"),url(/static/font/fa-brands-400.ttf) format("truetype"),url(/static/font/fa-brands-400.svg#fontawesome) format("svg")
+}
+.fab{
+  font-family:
+  Font Awesome\ 5 Brands
+}
+
+@font-face{
+  font-family:Font Awesome\ 5 Free;
+  font-style:normal;
+  font-weight:400;
+  src:url(/static/font/fa-regular-400.eot);
+  src:url(/static/font/fa-regular-400.eot?#iefix) format("embedded-opentype"),url(/static/font/fa-regular-400.woff2) format("woff2"),url(/static/font/fa-regular-400.woff) format("woff"),url(/static/font/fa-regular-400.ttf) format("truetype"),url(/static/font/fa-regular-400.svg#fontawesome) format("svg")
+}
+
+.far{
+  font-weight:400
+}
+
+@font-face{
+  font-family:Font Awesome\ 5 Free;
+  font-style:normal;
+  font-weight:900;
+  src:url(/static/font/fa-solid-900.eot);
+  src:url(/static/font/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(/static/font/fa-solid-900.woff2) format("woff2"),url(/static/font/fa-solid-900.woff) format("woff"),url(/static/font/fa-solid-900.ttf) format("truetype"),url(/static/font/fa-solid-900.svg#fontawesome) format("svg")
+}
+
+.fa, .far, .fas{
+  font-family:Font Awesome\ 5 Free
+}
+
+.fa, .fas{
+  font-weight:900
+}
+
+h2, h3, h4, h5, h6 {
+  line-height: 1em;
+  font-weight: 700;
+}
+
+h1 {
+  line-height: 1em;
+  font-weight: 500;
+  font-size: $fontHuge;
+  margin-bottom:$spaceLarge;
+}
+
+h2 {
+  font-size: $fontLarger;
+  margin-bottom:$spaceNormal;
+}
+
+h3 {
+  font-size: $fontLarge;
+  margin-bottom:$spaceNormal;
+}
+
+h4 {
+  font-size: $fontNormal;
+  margin-bottom:$spaceSmall;
+}
+
+h5 {
+  font-style: $fontSmall;
+  margin-bottom:$spaceTiny;
+}
+
+h6 {
+  font-style: $fontTiny;
+  margin-bottom: 0;
+}
+
+.footnote {
+  color: $grey5;
+  font-style: italic;
+  font-size: $fontSmall;
+}

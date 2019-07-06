@@ -1,0 +1,55 @@
+{
+  "environment" : "development",
+  "domain" : "example.com",
+  "port": "80?",
+  "protocol": "http|https",
+
+  "support": {
+    "name": "Support",
+    "email": "test@example.com"
+  },
+
+  "static" : {
+    "resource": "//example.com/path/to/cdn | /static"
+    "route": "/static"
+  },
+
+  "session" : {
+    "secret": "someSecRetStRinG",
+    "age": 60000
+  },
+
+  "database" : {
+    "name" : "",
+    "username" : "",
+    "password" : "",
+    "conf" : {
+      "host": "localhost",
+      "dialect": "mysql",
+      "logging": false,
+      "pool" : {
+        "max" : 10,
+        "min" : 0,
+        "acquire" : 30000,
+        "idle" : 10000
+      }
+    }
+  },
+
+  "test_database" : {
+    "name" : "",
+    "username" : "",
+    "password" : "",
+    "conf" : {
+      "host": "localhost",
+      "dialect": "mysql",
+      "logging": false,
+      "pool" : {
+        "max" : 10,
+        "min" : 0,
+        "acquire" : 30000,
+        "idle" : 10000
+      }
+    }
+  }
+}

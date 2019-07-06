@@ -1,0 +1,5 @@
+.idea/
+node_modules/**/*
+config/auth.json
+temp/upload/
+temp/log/

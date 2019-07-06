@@ -1,0 +1,30 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "reset.scss";
+@import "typography.scss";
+@import "elements.scss";
+
+
+// Just putting animations in here for now, if we end up having more than a few, then we should make its own file.
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spin{
+  0% {
+    transform:rotate(0deg)
+  }
+  to {
+    transform:rotate(1turn)
+  }
+}
+
+@keyframes move_background_vertical {
+  0% { background-position-y: 0; }
+  100% { background-position-y: -80px }
+}

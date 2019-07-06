@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Akwyar{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {% block favicon %}
+        <!-- When we get a real favicon, check out https://realfavicongenerator.net/ -->
+    {%  endblock %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="{{ site.static }}/css/base.css" />
+    {% endblock %}
+</head>
+<body>
+    {% block header %}{% endblock %}
+    <div id="page-content">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+    {% block footer %}{% endblock %}
+
+    {% block scripts %}
+        {% if site.environment == "production" %}
+            <!-- Bug tracking, analytics, etc -->
+        {% endif %}
+
+        <script type="text/javascript">
+            window._STATIC_DIR = "{{ site.static }}";
+        </script>
+    {% endblock %}
+</body>
+</html>

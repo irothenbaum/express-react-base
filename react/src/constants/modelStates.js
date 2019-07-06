@@ -1,0 +1,1 @@
+export const STATE_EXAMPLE = 'example state'

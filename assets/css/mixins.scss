@@ -1,0 +1,167 @@
+@import "variables";
+
+// --- AND UP
+
+@mixin extra_large_and_up {
+  @media screen and (min-width: $largeScreen) {
+    @content;
+  }
+}
+@mixin large_and_up {
+  @media screen and (min-width: $largeScreen) {
+    @content;
+  }
+}
+@mixin medium_and_up {
+  @media screen and (min-width: $mediumScreen) {
+    @content;
+  }
+}
+
+@mixin small_and_up {
+  @media screen and (min-width: $smallScreen) {
+    @content;
+  }
+}
+
+// --- ONLY
+
+@mixin small_only {
+  @media screen and (min-width: $smallScreen) and (max-width: $smallScreenLimit) {
+    @content;
+  }
+}
+
+@mixin medium_only {
+  @media screen and (min-width: $mediumScreen) and (max-width: $mediumScreenLimit) {
+    @content;
+  }
+}
+@mixin large_only {
+  @media screen and (min-width: $largeScreen) and (max-width: $largeScreenLimit) {
+    @content;
+  }
+}
+
+// --- AND DOWN
+
+@mixin extra_small_and_down {
+  @media screen and (max-width: $extraSmallScreenLimit) {
+    @content;
+  }
+}
+
+@mixin small_and_down {
+  @media screen and (max-width: $smallScreenLimit) {
+    @content;
+  }
+}
+
+@mixin medium_and_down {
+  @media screen and (max-width: $mediumScreenLimit) {
+    @content;
+  }
+}
+
+@mixin large_and_down {
+  @media screen and (max-width: $largeScreenLimit) {
+    @content;
+  }
+}
+
+// -- Styles
+
+@mixin candy_cane($shade : rgba(0,0,0,0.1)) {
+  $stripeSize : 80px;
+  $stripeSpeed : 5s;
+
+  background-size: $stripeSize $stripeSize !important;
+  background: linear-gradient(-45deg, transparent, 0%, transparent, 25%, $shade, 26%, $shade, 50%, transparent, 51%, transparent, 75%, $shade, 76%, $shade);
+  animation: move_background_vertical linear $stripeSpeed infinite;
+}
+
+@mixin icon_font {
+  font-family: Font Awesome\ 5 Free, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+}
+
+@mixin icon_font_thin {
+  font-family: Font Awesome\ 5 Free, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin clear_fix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin fill_page() {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin hover_opacity($idleOpac: 0.5, $hoverOpac: 1, $timing: 0.3s ease-out) {
+  cursor: pointer;
+  opacity: $idleOpac;
+  transition: opacity $timing;
+
+  &:hover {
+    opacity: $hoverOpac;
+  }
+}
+
+@mixin dropdown_chevron() {
+  cursor: pointer;
+
+  &:after {
+    @include icon_font();
+    content: '\f078';
+    color: $grey3;
+    display: inline-block;
+    margin-left: $spaceNormal;
+  }
+
+  &.opened:after {
+    content: '\f077'
+  }
+
+  &:hover:after {
+    color: $black;
+  }
+}
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin simple-panel-row() {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white;
+  max-width: 20rem;
+  padding: $spaceSmall;
+  @include ellipsis();
+
+  &:hover {
+    background-color: $grey1;
+  }
+
+  strong {
+    font-weight: bold;
+    margin-left: $spaceNormal;
+  }
+
+  strong, span {
+    white-space: nowrap;
+    display: block;
+  }
+}
