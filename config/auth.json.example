@@ -1,16 +1,22 @@
 {
   "environment" : "development",
+  "server" : "my-server-name",
   "domain" : "example.com",
-  "port": "80?",
   "protocol": "http|https",
 
-  "support": {
-    "name": "Support",
-    "email": "test@example.com"
+  "ssl": {
+    "key": "/path/to/key.pem",
+    "cert": "/path/to/cert.pem",
+    "chain": "/path/to/chain.pem"
+  },
+
+  "redis": {
+    "host": "",
+    "port": ""
   },
 
   "static" : {
-    "resource": "//example.com/path/to/cdn | /static"
+    "resource": "//example.com/path/to/cdn | /static",
     "route": "/static"
   },
 
