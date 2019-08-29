@@ -38,6 +38,13 @@ module.exports = (env) => {
         },
 
         plugins: [
+            // set our constants from our auth file
+            new webpack.DefinePlugin({
+                ENV_ENVIRONMENT: `"${auth.environment}"`,
+                ENV_PROTOCOL: `"${auth.protocol}"`,
+                ENV_DOMAIN: `"${auth.domain}"`,
+            }),
+
             //tells webpack where to store data about your bundles.
             new BundleTracker({filename: PROJECT_PATH + '/webpack-stats.json'}),
         ],
