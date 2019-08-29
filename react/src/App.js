@@ -21,7 +21,7 @@ class App extends React.Component {
         return (
             <Provider store={store}>
                 <Router basename={_BASE_PATH}>
-                    <h1>Street Chess</h1>
+                    <h1>React App</h1>
                     <Route path={ROUTE_ROOT} component={Landing} />
                 </Router>
             </Provider>
