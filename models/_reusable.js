@@ -1,3 +1,8 @@
+const TYPE_CREATED = 'CREATED'
+const TYPE_UPDATED = 'UPDATED'
+const TYPE_REMOVED = 'REMOVED'
+
+
 module.exports = {
     /**
      * @param {Model} model
@@ -8,13 +13,15 @@ module.exports = {
             if (!result) {
                 return result
             }
-            if(result.constructor === Array) {
-                let arrayLength = result.length;
-                for (let i = 0; i < arrayLength; i++) {
-                    result[i] = await model._afterFind(result[i])
+            if (typeof model._afterFind === 'function') {
+                if(result.constructor === Array) {
+                    let arrayLength = result.length;
+                    for (let i = 0; i < arrayLength; i++) {
+                        result[i] = await model._afterFind(result[i])
+                    }
+                } else {
+                    result = await model._afterFind(result)
                 }
-            } else {
-                result = await model._afterFind(result)
             }
             return result;
         }
@@ -25,8 +32,46 @@ module.exports = {
      * @returns {Function}
      */
     genericAfterCreate: function(model) {
-        return async (result) => {
-            await model._afterFind(result)
+        return async (result, options) => {
+            if (typeof model._saveForAudit === 'function') {
+                await model._saveForAudit(result, options.audit, TYPE_CREATED)
+            }
+
+            if (typeof model._afterFind === 'function') {
+                await model._afterFind(result)
+            }
+        }
+    },
+
+    /**
+     * @param {Model} model
+     * @returns {Function}
+     */
+    genericAfterUpdate: function(model) {
+        return async (result, options) => {
+            if (typeof model._saveForAudit === 'function') {
+                await model._saveForAudit(result, options.audit, TYPE_UPDATED)
+            }
+
+            if (typeof model._afterFind === 'function') {
+                await model._afterFind(result)
+            }
+        }
+    },
+
+    /**
+     * @param {Model} model
+     * @returns {Function}
+     */
+    genericAfterDestroy: function(model) {
+        return async (result, options) => {
+            if (typeof model._saveForAudit === 'function') {
+                await model._saveForAudit(result, options.audit, TYPE_REMOVED)
+            }
+
+            if (typeof model._afterFind === 'function') {
+                await model._afterFind(result)
+            }
         }
     },
 }
