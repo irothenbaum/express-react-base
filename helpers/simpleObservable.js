@@ -3,9 +3,9 @@ class Observable {
         this.__observers = []
         this.__counter = 0;
 
-        this.on.bind(this)
-        this.off.bind(this)
-        this.trigger.bind(this)
+        this.on = this.on.bind(this)
+        this.off = this.off.bind(this)
+        this.trigger = this.trigger.bind(this)
     }
 
     /**
